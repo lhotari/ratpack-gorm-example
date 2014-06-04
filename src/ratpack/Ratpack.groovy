@@ -8,25 +8,32 @@ ratpack {
   handlers {
     // test accessing Spring beans (the dataSource bean created by Spring Boot)
     get ('database') { DataSource dataSource ->
-        def sql
-        try { 
-            sql = new Sql(dataSource)
-            def result=[:] + sql.firstRow("select * from Person")
+        blocking {
+            def sql
+            try { 
+                sql = new Sql(dataSource)
+                [:] + sql.firstRow("select * from Person")
+            } finally {
+                sql?.close()
+            }
+        } then { result ->
             render "first row in Person: $result"
-        } finally {
-            sql?.close()
         }
     }
     // test Gorm access
-    get {
-    	def p = Person.findByFirstName("Homer")
-        if( !p ) {
-            Person.withTransaction {
-                p = new Person(firstName:"Homer", lastName:"Simpson")
-                p.save()                
+    get { 
+        blocking {
+        	def p = Person.findByFirstName("Homer")
+            if( !p ) {
+                Person.withTransaction {
+                    p = new Person(firstName:"Homer", lastName:"Simpson")
+                    p.save()                
+                }
             }
+            p
+        } then { result ->
+            render "Hello ${result.firstName}!"
         }
-        render "Hello ${p.firstName}!"
     }
         
     assets "public"
