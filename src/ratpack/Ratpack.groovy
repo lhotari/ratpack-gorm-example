@@ -3,9 +3,11 @@ import static ratpack.groovy.Groovy.ratpack
 import hello.Person
 import javax.sql.DataSource
 import groovy.sql.Sql
+import ratpack.spring.Spring
 
 ratpack {
   handlers {
+    register Spring.runApplication(hello.Application)
     // test accessing Spring beans (the dataSource bean created by Spring Boot)
     get ('database') { DataSource dataSource ->
         blocking {

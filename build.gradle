@@ -4,11 +4,11 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath "io.ratpack:ratpack-gradle:0.9.7.SB-SNAPSHOT"
+    classpath "io.ratpack:ratpack-gradle:0.9.8-SNAPSHOT"
   }
 }
 
-apply plugin: "ratpack-groovy"
+apply plugin: "io.ratpack.ratpack-groovy"
 apply plugin: "idea"
 apply plugin: "eclipse"
 
@@ -19,17 +19,17 @@ repositories {
 }
 
 dependencies {
-  compile "io.ratpack:ratpack-spring-boot:0.9.7.SB-SNAPSHOT"
+  compile "io.ratpack:ratpack-spring-boot:0.9.8-SNAPSHOT"
   compile 'org.grails:gorm-hibernate4-spring-boot:1.1.0.RELEASE'
-  compile 'org.grails:grails-core:2.4.2'
-  compile 'org.grails:grails-async:2.4.2'
-  compile 'org.grails:grails-validation:2.4.2'
+  compile 'org.grails:grails-core:2.4.3'
+  compile 'org.grails:grails-async:2.4.3'
+  compile 'org.grails:grails-validation:2.4.3'
   compile 'org.springframework:spring-orm:4.0.6.RELEASE'
   def springBootVersion = '1.1.4.RELEASE'
   compile "org.springframework.boot:spring-boot-cli:$springBootVersion", {
      exclude group:'org.codehaus.groovy', module:'groovy'
   }
-  compile 'org.codehaus.groovy:groovy-all:2.3.4'
+  compile 'org.codehaus.groovy:groovy-all:2.3.6'
   compile "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
 
   testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
