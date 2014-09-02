@@ -4,7 +4,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath "io.ratpack:ratpack-gradle:0.9.8-SNAPSHOT"
+    classpath "io.ratpack:ratpack-gradle:0.9.9-SNAPSHOT"
   }
 }
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-  compile "io.ratpack:ratpack-spring-boot:0.9.8-SNAPSHOT"
+  compile "io.ratpack:ratpack-spring-boot:0.9.9-SNAPSHOT"
   compile 'org.grails:gorm-hibernate4-spring-boot:1.1.0.RELEASE'
   compile 'org.grails:grails-core:2.4.3'
   compile 'org.grails:grails-async:2.4.3'
