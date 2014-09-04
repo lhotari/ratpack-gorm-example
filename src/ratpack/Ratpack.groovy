@@ -14,7 +14,7 @@ ratpack {
             def sql
             try { 
                 sql = new Sql(dataSource)
-                [:] + sql.firstRow("select * from Person")
+                [:] + (sql.firstRow("select * from Person")?:[:])
             } finally {
                 sql?.close()
             }
