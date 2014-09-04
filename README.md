@@ -3,11 +3,10 @@ ratpack-gorm-example
 
 Example of using GORM in Ratpack
 
-Currently requires to install this fork of ratpack: 
+Currently uses the master branch version of ratpack: 
 ```
-git clone https://github.com/lhotari/ratpack
+git clone https://github.com/ratpack/ratpack
 cd ratpack
-git checkout spring-boot
 ./gradlew install
 ```
 
