@@ -25,7 +25,7 @@ dependencies {
   compile 'org.grails:grails-async:2.4.3'
   compile 'org.grails:grails-validation:2.4.3'
   compile 'org.springframework:spring-orm:4.0.6.RELEASE'
-  def springBootVersion = '1.1.5.RELEASE'
+  def springBootVersion = '1.1.6.RELEASE'
   compile "org.springframework.boot:spring-boot-cli:$springBootVersion", {
      exclude group:'org.codehaus.groovy', module:'groovy'
   }
