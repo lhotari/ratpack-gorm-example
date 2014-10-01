@@ -22,6 +22,11 @@ ratpack {
             render "first row in Person: $result"
         }
     }
+
+    get ('author') { Person author ->
+        render "Author is ${author.firstName} $author.lastName"
+    }
+
     // test Gorm access
     get { 
         blocking {
