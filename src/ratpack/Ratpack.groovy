@@ -1,13 +1,14 @@
-import static ratpack.groovy.Groovy.groovyTemplate
-import static ratpack.groovy.Groovy.ratpack
-import hello.Person
-import javax.sql.DataSource
 import groovy.sql.Sql
-import ratpack.spring.Spring
+import hello.Person
+import static ratpack.spring.Spring.*
+
+import javax.sql.DataSource
+
+import static ratpack.groovy.Groovy.ratpack
 
 ratpack {
   handlers {
-    register Spring.run(hello.Application)
+    register spring(hello.Application)
     // test accessing Spring beans (the dataSource bean created by Spring Boot)
     get ('database') { DataSource dataSource ->
         blocking {
@@ -42,6 +43,8 @@ ratpack {
             render "Hello ${result.firstName}!"
         }
     }
+
+
         
     assets "public"
   }
