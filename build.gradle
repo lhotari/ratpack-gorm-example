@@ -30,7 +30,7 @@ repositories {
   if(useLocalRatpackRepo) 
     maven { url new File("../ratpack/build/localrepo").toURL() }
   jcenter()
-  maven { url "http://repo.springsource.org/repo" } // for springloaded
+  maven { url "https://repo.spring.io/repo" } // for springloaded
 }
 
 dependencies {
@@ -64,7 +64,7 @@ if(System.getProperty("debug.ratpack")) {
   dependencies {
     // SpringLoaded enables runtime hot reloading.
     // It is not part of the app runtime and is not shipped in the distribution.
-    //springloaded "org.springframework:springloaded:1.2.0.RELEASE"
+    //springloaded "org.springframework:springloaded:1.2.1.RELEASE"
   }
 }
 
